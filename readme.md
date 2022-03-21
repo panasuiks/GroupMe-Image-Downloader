@@ -1,4 +1,5 @@
-GroupMe-Image-Downloader
+**GroupMe-Image-Downloader
+**
 
 Tool developed to download images from a specific GroupMe conversation.
 
