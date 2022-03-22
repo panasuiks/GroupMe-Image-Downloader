@@ -52,6 +52,7 @@ sortByLike()
 console.log(photoData);
 //console.log(maxLikes);I like the fact that you ask the user who should go first on each match. However, I think it makes sense for the other participant to play first on the second round, and then they can take turns. Additionally, consider allowing for uppercase input here. 
 saveSortedToFile();
+console.log('Complete');
 
 
 function logBestUsers() {
