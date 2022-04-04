@@ -10,11 +10,13 @@ let lastDate = 0;
 let lastMessage;
 async function getData() {
   let response
+  console.log('start');
   if (lastDate === 0) {
     response = await fetch('https://api.groupme.com/v3/groups/28217213/messages?token=xhNXQInycF8Lx0RYHusy4bwWCdfov0dK7GxJBDZj&limit=100');
   } else {
     response = await fetch(`https://api.groupme.com/v3/groups/28217213/messages?token=xhNXQInycF8Lx0RYHusy4bwWCdfov0dK7GxJBDZj&limit=100&before_id=${lastMessage}`);
   }
+  //console.log(response);
   const data = await response.json();
   for (let message of data['response']['messages']) {
     lastDate = new Date(1000 * message['created_at']);
@@ -49,7 +51,7 @@ let maxLikes = []
 sortByLike()
 //populateUserResults();
 //logBestUsers();
-console.log(photoData);
+//console.log(photoData);
 //console.log(maxLikes);I like the fact that you ask the user who should go first on each match. However, I think it makes sense for the other participant to play first on the second round, and then they can take turns. Additionally, consider allowing for uppercase input here. 
 saveSortedToFile();
 console.log('Complete');
@@ -61,7 +63,7 @@ function logBestUsers() {
     sortedByAverage.push([user, userResults[user]['average']]);
   }
   sortedByAverage.sort((a, b) => b[1] - a[1]);
-  console.log(sortedByAverage);
+  //console.log(sortedByAverage);
 }
 
 function populateUserResults() {
